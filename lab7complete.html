@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Lab 7</title>
+        
+        <style>
+            .redLink:link {color:#F00;}
+            .redLink:visited {color:#F00;}
+            .redLink:hover {color:#F00; text-shadow:0.1em 0.1em 0.2em #aaa;}
+            .redLink:active {color:#990000;}
+        </style>
+    </head>
+    <body>
+        <p>
+            Your window is <span id="windowWidth">960</span> x 
+            <span id="windowHeight">715</span>.
+        </p>
+        <p>
+            <a id="reloadLink" href="#">Reload</a> this page.
+        </p>
+        <button onclick="doLabStuff()">Do Lab Stuff</button>
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <script>
+        /*
+            Complete the function in this script section to perform the requested jQuery operations.
+        */
+
+        function doLabStuff() {
+            /*
+                a. Update the width and height values in the first <p> tag to represent the width and height of the current window’s content area. (These are properties of the window object)
+            */
+
+            $("#windowWidth").html(window.innerWidth);
+            $("#windowHeight").html(window.innerHeight);
+
+            /*
+                b. Populate the href attribute of the link you just created with the current page’s URL. The URL should come from the document object.
+            */
+
+            $("#reloadLink").attr("href", document.url);
+
+            /*  c. Change the word "Reload" to "Refresh". */
+
+            $("#reloadLink").html("Refresh");
+
+            /*  d. Add the redLink class to the link. */
+
+            $("#reloadLink").addClass("redLink");
+
+        }
+    </script>
+</html>
